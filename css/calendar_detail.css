@@ -1,0 +1,624 @@
+.main_section {
+    width: calc(100% - 32px);
+    height: calc(100vh - 106px);
+    margin-top: 60px;
+}
+.schedule_write_whole {
+    width: 100%;
+    height: auto;
+}
+.schedule_write_flex {
+    width: 100%;
+    height: auto;
+}
+.schedule_write_flex select {
+    min-width: 62px;
+    width: 62px;
+    max-width: 62px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #F7F4F8;
+    background-color: #5D1663!important;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+
+	-webkit-appearance:none; /* 화살표 없애기 for chrome*/
+	-moz-appearance:none; /* 화살표 없애기 for firefox*/
+	appearance:none; /* 화살표 없애기 공통*/
+    padding: 0 10px;
+    cursor: default!important;
+}
+.schedule_write_flex select:disabled {
+    background-color: #5D1663!important;
+}
+.schedule_write_flex input {
+    width: calc(100% - 24px);
+    height: auto;
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: 400;
+    color: #111111;
+    background-color: #F7F4F8;
+    border-radius: 10px;
+    padding: 11px 12px 12px 12px;
+    margin-left: 10px;
+    cursor: default!important;
+}
+.schedule_write_flex input:disabled,
+.schedule_write_flex input:read-only {
+    cursor: default;
+}
+.schedule_write_flex input::placeholder {
+    color: #C9BDCC;
+}
+.schedule_input_box {
+    width: calc(100% - 24px);
+    height: auto;
+    border-radius: 10px;
+    padding: 12px 12px 11px 12px;
+    margin: 10px auto 0 auto;
+    background-color: #F7F4F8;
+    cursor: default!important;
+}
+.schedule_input_box * {
+    cursor: default!important;
+}
+.schedule_input_box.schedule_input_pur {
+    background-color: #EAD9EF;
+    cursor: pointer;
+}
+.schedule_input_box.schedule_input_pur * {
+    cursor: pointer;
+}
+.schedule_input_box img {
+    min-width: 17px;
+    width: 17px;
+    height: 17px;
+    background-size: contain;
+    margin: 0 8px 0 0;
+}
+.schedule_input_box input {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: 400;
+    color: #3D3D3D;
+    background-color: transparent;
+    cursor: text;
+}
+.schedule_input_box input::placeholder {
+    color: #C9BDCC;
+}
+.schedule_text_box {
+    width: calc(100% - 24px);
+    height: 76px;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: #F7F4F8;
+    margin: 10px auto 0 auto;
+    cursor: default!important;
+}
+.schedule_text_box * {
+    cursor: default!important;
+}
+.schedule_text_box textarea {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    resize: none;
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: 400;
+    color: #3D3D3D;
+    cursor: text;
+}
+.schedule_text_box textarea::-webkit-scrollbar {
+    display: none;
+}
+.schedule_text_box textarea::placeholder {
+    color: #C9BDCC;
+}
+.schedule_text_box img {
+    min-width: 17px;
+    width: 17px;
+    height: 17px;
+    background-size: contain;
+    margin: 0 8px 0 0;
+}
+p.invite_member {
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: 400;
+    color: #3D3D3D;
+    margin: 8px auto 0 auto;
+}
+
+.btn_flex {
+    position: absolute;
+    width: calc(100% - 32px);
+    height: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+button.btn {
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    font-weight: 400;
+    border-radius: 10px;
+}
+button.btn.btn_cancel {
+    min-width: 100px;
+    width: 100px;
+    color: #5D1663;
+    border: 1px solid #5D1663;
+    background-color: transparent;
+    margin-right: 10px;
+    cursor: pointer;
+}
+button.btn.btn_send {
+    width: 100%;
+    color: #F7F4F8!important;
+    background-color: #5D1663;
+    cursor: pointer;
+}
+button.btn.btn_send a {
+    display: block;
+    width: 100%;
+    color: #F7F4F8!important;
+    cursor: pointer;
+}
+
+/*알림설정*/
+.alarm_setting_whole {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+}
+.alarm_setting_bg {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+}
+.alarm_setting_box {
+    position: absolute;
+    width: max-content;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.alarm_setting_inner {
+    width: 240px;
+    height: auto;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    padding: 32px 0;
+}
+.alarm_setting_inner img {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    margin: 0 auto;
+}
+.alarm_setting_inner img + p {
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: 400;
+    color: #9F72AE;
+    text-align: center;
+    margin: 5px auto 20px auto;
+}
+.alarm_label_whole {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.alarm_label_whole label {
+    min-width: 154px;
+    width: max-content;
+    height: auto;
+    margin: 8px auto 0 auto;
+    cursor: pointer;
+}
+.alarm_label_whole label * {
+    cursor: pointer;
+}
+input[name="alarm_time"] + span {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    background: url('../img/radio_off.svg') no-repeat;
+}
+input[name="alarm_time"] + span + p {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #CCCCCC;
+    margin: 0 0 0 5px;
+}
+input[name="alarm_time"]:checked + span {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    background: url('../img/radio_on.svg') no-repeat;
+}
+input[name="alarm_time"]:checked + span + p {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #5D1663;
+    margin: 0 0 0 5px;
+}
+.alarm_btn_flex {
+    width: max-content;
+    height: auto;
+    margin: 16px auto 0 auto;
+}
+.alarm_btn_flex .alarm_btn {
+    min-width: 80px;
+    width: 80px;
+    height: 32px;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.alarm_btn_flex .alarm_btn.alarm_btn_cancel {
+    color: #EAD9EF;
+    background-color: transparent;
+    border: 1px solid #EAD9EF;
+}
+.alarm_btn_flex .alarm_btn.alarm_btn_choose {
+    color: #000000;
+    background-color: #EAD9EF;
+    margin-left: 10px;
+}
+.alarm_btn_flex .alarm_btn:disabled {
+    color: #999999;
+    background-color: #555555;
+}
+
+
+/*달력설정*/
+.calendar_setting_whole {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+}
+.calendar_setting_bg {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+}
+.calendar_setting_box {
+    position: absolute;
+    width: max-content;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.calendar_setting_txt {
+    width: 240px;
+    height: auto;
+    padding: 10px 0;
+    border-radius: 10px;
+    background-color: #9F72AE;
+    margin: 0 auto 10px auto;
+}
+.calendar_inner_txt {
+    width: max-content;
+    height: auto;
+    margin: 0 auto;
+}
+.calendar_setting_txt p:nth-child(2n+1) {
+    font-size: 12px;
+    line-height: 13px;
+    font-weight: bold;
+    color: #D0A8DE;
+}
+.calendar_setting_txt p:nth-child(2n) {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #F7F4F8;
+}
+.calendar_setting_txt p#calendar_txt_start {
+    margin-bottom: 10px;
+}
+.calendar_setting_inner {
+    width: 240px;
+    height: auto;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    padding: 20px 0;
+}
+.calendar_start_end_btn {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.start_end_btn {
+    width: 80px;
+    height: 28px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #9F72AE;
+    border: 1px solid #9F72AE;
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.start_end_btn.btn_start {
+    background-color: transparent;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    margin: 0 10px 0 0;
+}
+.start_end_btn.btn_on {
+    width: 80px;
+    height: 28px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #f9f9f9;
+    border: 1px solid #9F72AE;
+    border-radius: 5px;
+    background-color: #9F72AE;
+}
+.calendar_swiper_whole {
+    width: 100%;
+    min-height: 128px;
+    height: 128px;
+    margin: 0 auto;
+}
+.calendar_time_flex {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.calendar_time_flex input {
+    width: 52px;
+    height: 36px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #5D1663;
+    background-color: #F7F4F8;
+    border-radius: 5px;
+    text-align: center;
+    -webkit-appearance: none;
+    margin: 0;
+    cursor: text;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.calendar_time_flex p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #5D1663;
+    margin: 0 10px;
+}
+.calendar_btn_flex {
+    width: max-content;
+    height: auto;
+    margin: 16px auto 0 auto;
+}
+.calendar_btn_flex .calendar_btn {
+    min-width: 80px;
+    width: 80px;
+    height: 32px;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.calendar_btn_flex .calendar_btn.calendar_btn_cancel {
+    color: #EAD9EF;
+    background-color: transparent;
+    border: 1px solid #EAD9EF;
+}
+.calendar_btn_flex .calendar_btn.calendar_btn_choose {
+    color: #000000;
+    background-color: #EAD9EF;
+    margin-left: 10px;
+}
+.calendar_btn_flex .calendar_btn.calendar_btn_choose:disabled {
+    color: #000000;
+    background-color: #999;
+    margin-left: 10px;
+}
+
+
+/*달력 input*/
+.gallery_row{
+    width: 100%;
+    height: auto;
+    margin: 0 auto 12px auto;
+}
+.gallery_row p{
+    min-width: 100px;
+    width: 100px;
+    height: auto;
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: bold;
+    color: #101010;
+    padding: 9px 0 10px 0;
+}
+input.gallery_input{
+    width: calc(100% - 22px);
+    height: 34px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #0B0B0B;
+    border: 1px solid #E6E6E6;
+    background-color: #FFFFFF;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+/*달력 팝업*/
+.date_whole{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.date_bg{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+}
+.date_box{
+    position: absolute;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFFFFF;
+}
+.selected_date_txt{
+    width: 100%;
+    height: 48px;
+    font-size: 15px;
+    line-height: 48px;
+    font-weight: bold;
+    color: #101010;
+    text-align: center;
+    border-bottom: 2px solid #FFDF1A;
+    display: none;
+}
+.date_select_box{
+    width: auto;
+    height: auto;
+    padding: 22px 0;
+    margin: 0 auto;
+}
+.date_select_box .display_flex{
+    width: 100%;
+    height: auto;
+}
+.date_select_ok{
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: bold;
+    color: #101010;
+    text-align: center;
+    padding: 15px 0;
+    background-color: transparent;
+    border-top: 1px solid #E2E2E2;
+    cursor: pointer;
+}
+.date_swiper{
+    width: max-content;
+    height: auto;
+    margin: 0 20px 0 0;
+}
+.display_flex .date_swiper:last-child{
+    margin-right: 0;
+}
+.date_swiper .swiper-wrapper{
+    min-width: 50px;
+    width: 50px;
+    height: auto!important;
+    max-height: 86px;
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: bold;
+    color: #101010;
+    height: auto;
+    text-align: center;
+}
+.date_swiper .swiper-wrapper .swiper-slide{
+    width: auto;
+    height: auto;
+}
+p.date_inner_txt{
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: bold;
+    color: #BCBCBC;
+    padding: 9px 0 8px 0;
+    cursor: pointer;
+}
+.swiper-slide-active p.date_inner_txt{
+    color: #101010;
+}
+.date_select_box .display_flex:first-child{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 56.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.date_select_box .display_flex:first-child div{
+    position: relative;
+    min-width: 50px;
+    width: 50px;
+    height: 36px;
+    margin: 0 20px 0 0;
+}
+.date_select_box .display_flex:first-child div:last-child{
+    margin-right: 0;
+}
+.date_select_box .display_flex:first-child div p:first-child{
+    position: absolute;
+    min-width: 50px;
+    width: 50px;
+    height: 1px;
+    background-color: #FFDF1A;
+    top: 0;
+    left: 0;
+}
+.date_select_box .display_flex:first-child div p:last-child{
+    position: absolute;
+    min-width: 50px;
+    width: 50px;
+    height: 1px;
+    background-color: #FFDF1A;
+    bottom: 0;
+    left: 0;
+}

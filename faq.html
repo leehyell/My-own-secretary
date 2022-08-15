@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="leehyell" property="og:title"/>
+    <meta content="웹 디자이너 & 웹 퍼블리셔" property="og:description"/>
+    <meta content="https://lee-hyell-portfolio.netlify.app/img/kakao_img.png" property="og:image"/>
+
+    <title>이혜린 포트폴리오</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/faq.css">
+</head>
+<body>
+    <header class="header_section display_flex flex_nowrap flex_start flex_align_c">
+        <img src="./img/back_wh.svg" alt="이전으로 가기 아이콘" onclick="goBack()">
+        <p class="another_font">나만의 비서</p>
+    </header>
+    <main class="main_section">
+        <div class="list_whole">
+            <div class="list_row" data-id="list_num1" id="list_num1" onclick="listToggle(this)">
+                <div class="list_flex display_flex flex_nowrap flex_between flex_align_c">
+                    <p>
+                        자주묻는질문자주묻는질문자주묻는질문자주묻는질문
+                        자주묻는질문자주묻는질문자주묻는질문자주묻는질문
+                    </p>
+                    <p>0000.00.00</p>
+                </div>
+                <div class="list_toggle">
+                    <p class="list_title">
+                        자주묻는질문자주묻는질문자주묻는질문자주묻는질문
+                        자주묻는질문자주묻는질문자주묻는질문자주묻는질문
+                    </p>
+                    <p class="content_txt">
+                        내용내용내용내용내용
+                        내용내용내용내용내용
+                        내용내용내용내용내용
+                        내용내용내용내용내용
+                        내용내용내용내용내용
+                    </p>
+                    <div class="list_img">
+                        <img src="./img/profile_default.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="list_row" data-id="list_num2" id="list_num2" onclick="listToggle(this)">
+                <div class="list_flex display_flex flex_nowrap flex_between flex_align_c">
+                    <p>
+                        자주묻는질문
+                    </p>
+                    <p>0000.00.00</p>
+                </div>
+                <div class="list_toggle">
+                    <p class="list_title">
+                        자주묻는질문
+                    </p>
+                    <p class="content_txt">
+                        내용내용내용내용내용
+                        내용내용내용내용내용
+                        내용내용내용내용내용
+                        내용내용내용내용내용
+                        내용내용내용내용내용
+                    </p>
+                    <div class="list_img">
+                        <img src="./img/banner_img.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+    <script src="./js/common_js.js"></script>
+</body>
+</html>

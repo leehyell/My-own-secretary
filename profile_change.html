@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="leehyell" property="og:title"/>
+    <meta content="웹 디자이너 & 웹 퍼블리셔" property="og:description"/>
+    <meta content="https://lee-hyell-portfolio.netlify.app/img/kakao_img.png" property="og:image"/>
+
+    <title>이혜린 포트폴리오</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/profile_change.css">
+</head>
+<body>
+    <header class="header_section display_flex flex_nowrap flex_start flex_align_c">
+        <img src="./img/back_wh.svg" alt="이전으로 가기 아이콘" onclick="goBack()">
+        <p class="another_font">나만의 비서</p>
+    </header>
+    <main class="main_section">
+        <div class="profile_box">
+            <div class="profile_inner">
+                <div class="profile_img">
+                    <img src="./img/profile_default.svg" alt="" id="preview">
+                </div>
+                <label for="profile_input_img" class="profile_change_img">
+                    <input type="file" id="profile_input_img" onchange="fileChange(this)" hidden>
+                    <img src="./img/plus_wh.svg" alt="">
+                </label>
+            </div>
+            <p><span>infp</span> 님</p>
+        </div>
+        <div class="schedule_input_whole">  
+            <div class="schedule_input_box display_flex flex_nowrap flex_start flex_align_c">
+                <img src="./img/pw_pu.svg" alt="">
+                <input type="password" onkeyup="pwWrite()" id="pw_input1" placeholder="비밀번호를 입력해주세요.">
+            </div>
+            <div class="schedule_input_box display_flex flex_nowrap flex_start flex_align_c">
+                <img src="./img/pw_pu.svg" alt="">
+                <input type="password" onkeyup="pwWrite()" id="pw_input2" placeholder="비밀번호를 다시 입력해주세요.">
+            </div>
+            <p id="pw_chk_txt">비밀번호가 다릅니다. 확인해주세요.</p>
+            <div class="schedule_input_box display_flex flex_nowrap flex_start flex_align_c">
+                <img src="./img/call_icon.svg" alt="">
+                <input type="number" id="place_write" value="01064496852" placeholder="핸드폰 번호를 입력해주세요.(변경시에만)">
+            </div>
+            <div class="schedule_input_box display_flex flex_nowrap flex_start flex_align_c">
+                <img src="./img/mail_icon.svg" alt="">
+                <input type="text" id="invite_write" value="helena1005@naver.com" placeholder="이메일을 입력해주세요.(변경시에만)">
+            </div>
+            <div class="schedule_text_box display_flex flex_nowrap flex_start flex_align_e">
+                <img src="./img/memo_pu.svg" alt="">
+                <textarea name="" id="memo_write" cols="30" rows="10" maxlength="100" placeholder="나를 설명해주세요.(최대 100글자).">저는 2019년에 처음 퍼블리싱을 독학하여 2021년 1월부터 퍼블리셔로 일하고 있으며, 현재 직장에서 디자인 & 퍼블리싱 총괄 팀장을 맡고 있습니다.
+                </textarea>
+            </div>
+        </div>
+        <div class="btn_flex display_flex flex_nowrap flex_start flex_align_c">
+            <button type="button" class="btn btn_cancel" onclick="goBack()">취소</button>
+            <button type="button" class="btn btn_send">저장</button>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+    <script src="./js/common_js.js"></script>
+</body>
+</html>

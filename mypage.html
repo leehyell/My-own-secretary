@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="leehyell" property="og:title"/>
+    <meta content="웹 디자이너 & 웹 퍼블리셔" property="og:description"/>
+    <meta content="https://lee-hyell-portfolio.netlify.app/img/kakao_img.png" property="og:image"/>
+
+    <title>이혜린 포트폴리오</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/mypage.css">
+</head>
+<body>
+    <header class="header_section display_flex flex_nowrap flex_start flex_align_c">
+        <img src="./img/back_wh.svg" alt="이전으로 가기 아이콘" onclick="goBack()">
+        <p class="another_font">마이페이지</p>
+    </header>
+    <main class="main_section">
+        <div class="side_profile">
+            <a href="./my_profile.html">
+                <div class="profile_row display_flex flex_nowrap flex_start flex_align_c">
+                    <div class="profile_img">
+                        <img src="./img/profile_default.svg" alt="">
+                    </div>
+                    <div>
+                        <p><span>닉네임</span> 님</p>
+                        <div class="profile_flex display_flex flex_nowrap flex_start flex_align_c">
+                            <img src="./img/mail_icon.svg" alt="">
+                            <p>helena1005@naver.com</p>
+                        </div>
+                        <div class="profile_flex display_flex flex_nowrap flex_start flex_align_c">
+                            <img src="./img/call_icon.svg" alt="">
+                            <p>010-6449-6852</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="a_link_whole">
+            <a href="./profile_change.html">
+                <div class="a_link_row display_flex flex_nowrap flex_between flex_align_c">
+                    <p>프로필 수정</p>
+                    <img src="./img/next_pu.svg" alt="">
+                </div>
+            </a>
+            <a href="./faq.html">
+                <div class="a_link_row display_flex flex_nowrap flex_between flex_align_c">
+                    <p>자주 묻는 질문</p>
+                    <img src="./img/next_pu.svg" alt="">
+                </div>
+            </a>
+            <a href="./notice.html">
+                <div class="a_link_row display_flex flex_nowrap flex_between flex_align_c">
+                    <p>공지사항</p>
+                    <img src="./img/next_pu.svg" alt="">
+                </div>
+            </a>
+            <a href="./event.html">
+                <div class="a_link_row display_flex flex_nowrap flex_between flex_align_c">
+                    <p>이벤트</p>
+                    <img src="./img/next_pu.svg" alt="">
+                </div>
+            </a>
+            <a href="javascript:void(0)">
+                <div class="a_link_row display_flex flex_nowrap flex_between flex_align_c">
+                    <p>이벤트 당첨 내역</p>
+                    <p>0</p>
+                </div>
+            </a>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+    <script src="./js/common_js.js"></script>
+</body>
+</html>

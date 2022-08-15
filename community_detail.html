@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="leehyell" property="og:title"/>
+    <meta content="웹 디자이너 & 웹 퍼블리셔" property="og:description"/>
+    <meta content="https://lee-hyell-portfolio.netlify.app/img/kakao_img.png" property="og:image"/>
+
+    <title>이혜린 포트폴리오</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/community_detail.css">
+</head>
+<body>
+    <header class="header_section display_flex flex_nowrap flex_start flex_align_c">    
+        <div class="header_detail_flex display_flex flex_nowrap flex_between flex_align_c">
+            <div class="display_flex flex_nowrap flex_start flex_align_c">
+                <img src="./img/back_wh.svg" alt="이전으로 가기 아이콘" onclick="goBack()">
+                <p class="another_font">나만의 비서</p>
+            </div>
+            <img src="./img/heart_light_pu.svg" alt="" id="heart_on_off" data-id="heart_on_off" onclick="heartToggleShow()">
+            <div class="icon_more_box">
+                <button type="button" class="more_icon more_icon2">
+                    <img src="./img/heart_light_pu.svg" alt="" id="main_heart_onoff1" data-id="main_heart_onoff1" onclick="heartOnOff2(this)">
+                </button>
+                <button type="button" class="more_icon" onclick="recommentWarningShow2()">
+                    <img src="./img/notice_pu.svg" alt="">
+                </button>
+                <button type="button" class="more_icon" onclick="userCutOffShow2()">
+                    <img src="./img/cutoff_pu.svg" alt="">
+                </button>
+                <button type="button" class="more_icon" onclick="pageLinkCopy()">
+                    <img src="./img/link_pu.svg" alt="">
+                </button>
+                <button type="button" class="more_icon" onclick="heartToggleHide()">
+                    <img src="./img/delete_light_pu.svg" alt="">
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="main_section">
+        <div class="wrote_profile_whole">
+            <a href="./my_profile.html">
+                <div class="display_flex flex_nowrap flex_between flex_align_c">
+                    <img src="./img/profile_default.svg" alt="" class="user_img">
+                    <div class="profile_info">
+                        <div class="display_flex flex_nowrap flex_start flex_align_c">
+                            <p id="commu_wrote_user">닉네임</p>
+                            <p class="commu_between_p">·</p>
+                            <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                <img src="./img/commu_gr.svg" alt="">
+                                <p>0</p>
+                            </div>
+                            <p class="commu_between_p">·</p>
+                            <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                <img src="./img/heart_gr.png" alt="">
+                                <p>0</p>
+                            </div>
+                            <p class="commu_between_p">·</p>
+                            <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                <img src="./img/link_gr.svg" alt="">
+                                <p>0</p>
+                            </div>
+                        </div>
+                        <p class="date_txt">0000.00.00</p>
+                    </div>
+                    <img src="./img/next_pu.svg" alt="" class="next_icon">
+                </div>
+            </a>
+        </div>
+        <div class="commu_title_whole">
+            <div class="commu_title_flex display_flex flex_nowrap flex_start flex_align_c">
+                <p>카테고리</p>
+                <input type="text" value="유저가입력한제목" placeholder="제목을 입력해주세요(최대 12글자)" maxlength="12" readonly>
+            </div>
+            <div class="commu_content">
+                <p>
+                    커뮤니티내용커뮤니티내용커뮤니티내용커뮤니티내용
+                    커뮤니티내용커뮤니티내용커뮤니티내용커뮤니티내용
+                    커뮤니티내용커뮤니티내용커뮤니티내용커뮤니티내용
+                </p>
+                <img src="./img/profile_default.svg" alt="">
+            </div>
+            <p class="between_line"></p>
+            <div class="commu_comment_whole">
+                <!--commu_comment_row 반복-->
+                <div class="commu_comment_row">
+                    <div class="commu_comment_main">
+                        <div class="display_flex flex_nowrap flex_between flex_align_s">
+                            <p class="user_comment">
+                                댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글
+                                댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글
+                                댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글
+                                댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글
+                            </p>
+                            <img src="./img/read_gr.svg" alt="" id="read_more1" data-id="read_more1" onmouseover="readHover(this)" class="readmore_icon">
+                            <div class="sticky_sub_menu" onmouseleave="readHie()">
+                                <p id="recomment_warning1" data-id="recomment_warning1" onclick="recommentWarningShow(this)">댓글 신고하기</p>
+                                <p id="recommend_user_name1" data-id="recommend_user_name1" onclick="userCutOffShow(this)">유저 차단하기</p>
+                            </div>
+                        </div>
+                        <div class="commu_info_flex display_flex flex_nowrap flex_between flex_align_c">
+                            <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                <p class="user_nick_txt">닉네임</p>
+                                <p class="commu_between_p">·</p>
+                                <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                    <img src="./img/commu_gr.svg" alt="">
+                                    <p>0</p>
+                                </div>
+                                <p class="commu_between_p">·</p>
+                                <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                    <img src="./img/heart_gr.png" alt="" id="heart_onoff1" data-id="heart_onoff1" onclick="heartOnOff(this)" class="heart_onoff">
+                                    <p>0</p>
+                                </div>
+                                <p class="commu_between_p">·</p>
+                                <button type="button">답글</button>
+                            </div>
+                            <p>0000.00.00</p>
+                        </div>
+                    </div>
+                    <!--답글이 있을 땐 commu_recomment_row 반복-->
+                    <div class="commu_recomment_row">
+                        <div class="recomment_content_flex display_flex flex_nowrap flex_between flex_align_s">
+                            <div class="display_flex flex_nowrap flex_between flex_align_s">
+                                <p>┗</p>
+                                <p class="user_comment">
+                                    댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2
+                                    댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2
+                                    댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2
+                                    댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2
+                                </p>
+                            </div>
+                            <img src="./img/read_gr.svg" alt="" id="read_more2" data-id="read_more2" onmouseover="readHover(this)" class="readmore_icon">
+                            <div class="sticky_sub_menu" onmouseleave="readHie()">
+                                <p id="recomment_warning2" data-id="recomment_warning2" onclick="recommentWarningShow(this)">댓글 신고하기</p>
+                                <p id="recommend_user_name2" data-id="recommend_user_name2" onclick="userCutOffShow(this)">유저 차단하기</p>
+                            </div>
+                        </div>
+                        <div class="commu_info_flex display_flex flex_nowrap flex_between flex_align_c">
+                            <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                <p class="user_nick_txt">닉네임2</p>
+                                <p class="commu_between_p">·</p>
+                                <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                    <img src="./img/heart_gr.png" alt="" id="heart_onoff2" data-id="heart_onoff2" onclick="heartOnOff(this)" class="heart_onoff">
+                                    <p>0</p>
+                                </div>
+                                <p class="commu_between_p">·</p>
+                                <button type="button">답글</button>
+                            </div>
+                            <p>0000.00.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="sticky_sub_footer">
+        <div class="sticky_sub_inner display_flex flex_nowrap flex_between flex_align_c">
+            <input type="text" placeholder="댓글을 남겨주세요" id="comment_val" onkeyup="commentChk()">
+            <button type="button" id="comment_send_btn" disabled>
+                <span></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="confirm_whole">
+        <div class="confirm_bg"></div>
+        <div class="confirm_box">
+            <p class="confirm_title"></p>
+            <p class="warning_info_txt">차단할 이름: <span id="cut_warning_name">0</span></p>
+            <div class="confirm_flex display_flex flex_nowrap flex_center flex_align_c">
+                <button type="button" id="confirm_btn_no" onclick="confirmHide()">취소</button>
+                <button type="button" id="confirm_btn_ok" onclick="confirmOk()">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert_whole">
+        <div class="alert_bg"></div>
+        <div class="alert_box">
+            <p></p>
+            <div class="alert_flex display_flex flex_nowrap flex_center flex_align_c">
+                <button type="button" onclick="alertHide()">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="recomment_warning_whole recomment_warning_whole1">
+        <div class="recomment_warning_bg"></div>
+        <div class="recomment_warning_box">
+            <p>신고하기</p>
+            <p class="warning_info_txt">신고할 이름: <span id="warning_name">0</span></p>
+            <p class="warning_info_txt">신고할 댓글: <span id="warning_content">0</span></p>
+            <textarea name="" id="recomment_txt_box" cols="30" rows="10" onkeyup="recommentKeyup()"></textarea>
+            <div class="recomment_warning_flex display_flex flex_nowrap flex_center flex_align_c">
+                <button type="button" onclick="recommentWarningHide()">취소</button>
+                <button type="button" id="warning_send_btn" onclick="warningSend()" disabled>전송</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="recomment_warning_whole recomment_warning_whole2">
+        <div class="recomment_warning_bg"></div>
+        <div class="recomment_warning_box">
+            <p>신고하기</p>
+            <p class="warning_info_txt">신고할 이름: <span id="warning_name2">0</span></p>
+            <p class="warning_info_txt">신고할 댓글: <span id="warning_content2">0</span></p>
+            <textarea name="" id="recomment_txt_box" cols="30" rows="10" onkeyup="recommentKeyup()"></textarea>
+            <div class="recomment_warning_flex display_flex flex_nowrap flex_center flex_align_c">
+                <button type="button" onclick="recommentWarningHide()">취소</button>
+                <button type="button" id="warning_send_btn2" onclick="warningSend()" disabled>전송</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+    <script src="./js/common_js.js"></script>
+</body>
+</html>

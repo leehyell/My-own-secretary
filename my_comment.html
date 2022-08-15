@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="leehyell" property="og:title"/>
+    <meta content="웹 디자이너 & 웹 퍼블리셔" property="og:description"/>
+    <meta content="https://lee-hyell-portfolio.netlify.app/img/kakao_img.png" property="og:image"/>
+
+    <title>이혜린 포트폴리오</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/my_comment.css">
+</head>
+<body>
+    <header class="header_section display_flex flex_nowrap flex_start flex_align_c">
+        <img src="./img/back_wh.svg" alt="이전으로 가기 아이콘" onclick="goBack()">
+        <p class="another_font">나만의 비서</p>
+    </header>
+    <main class="main_section">
+        
+        <div class="commu_comment_whole">
+            <!--commu_comment_row 반복-->
+            <div class="commu_comment_row">
+                <div class="commu_comment_main" id="my_comment1">
+                    <div class="display_flex flex_nowrap flex_between flex_align_s">
+                        <p class="user_comment">
+                            댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글
+                            댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글
+                            댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글
+                            댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글
+                        </p>
+                        <img src="./img/read_gr.svg" alt="" id="read_more1" data-id="read_more1" onmouseover="readHover(this)" class="readmore_icon">
+                        <div class="sticky_sub_menu" onmouseleave="readHie()">
+                            <p data-id="my_comment1" onclick="deletePopup(this)">삭제하기</p>
+                            <p><a href="./community_write.html?write_no=1">수정하기</a></p>
+                        </div>
+                    </div>
+                    <div class="commu_info_flex display_flex flex_nowrap flex_between flex_align_c">
+                        <div class="display_flex flex_nowrap flex_start flex_align_c">
+                            <p class="user_nick_txt">닉네임</p>
+                            <p class="commu_between_p">·</p>
+                            <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                <img src="./img/commu_gr.svg" alt="">
+                                <p>0</p>
+                            </div>
+                            <p class="commu_between_p">·</p>
+                            <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                <img src="./img/heart_gr.png" alt="" id="heart_onoff1" data-id="heart_onoff1" onclick="heartOnOff(this)" class="heart_onoff">
+                                <p>0</p>
+                            </div>
+                        </div>
+                        <p>0000.00.00</p>
+                    </div>
+                </div>
+                <!--답글이 있을 땐 commu_recomment_row 반복-->
+                <div class="commu_recomment_row" id="my_comment2">
+                    <div class="recomment_content_flex display_flex flex_nowrap flex_between flex_align_s">
+                        <div class="display_flex flex_nowrap flex_between flex_align_s">
+                            <p>┗</p>
+                            <p class="user_comment">
+                                댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2
+                                댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2
+                                댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2
+                                댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2댓글2
+                            </p>
+                        </div>
+                        <img src="./img/read_gr.svg" alt="" id="read_more2" data-id="read_more2" onmouseover="readHover(this)" class="readmore_icon">
+                        <div class="sticky_sub_menu" onmouseleave="readHie()">
+                            <p data-id="my_comment2" onclick="deletePopup(this)">삭제하기</p>
+                            <p><a href="./co">수정하기</a></p>
+                        </div>
+                    </div>
+                    <div class="commu_info_flex display_flex flex_nowrap flex_between flex_align_c">
+                        <div class="display_flex flex_nowrap flex_start flex_align_c">
+                            <p class="user_nick_txt">닉네임2</p>
+                            <p class="commu_between_p">·</p>
+                            <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                <img src="./img/heart_gr.png" alt="" id="heart_onoff2" data-id="heart_onoff2" onclick="heartOnOff(this)" class="heart_onoff">
+                                <p>0</p>
+                            </div>
+                        </div>
+                        <p>0000.00.00</p>
+                    </div>
+                </div>
+                <p class="no_data_txt" style="display: none;">쓴 댓글이 없습니다.</p>
+            </div>
+        </div>
+    </main>
+
+    <div class="alert_whole">
+        <div class="alert_bg"></div>
+        <div class="alert_box">
+            <p></p>
+            <div class="alert_flex display_flex flex_nowrap flex_center flex_align_c">
+                <button type="button" onclick="alertHide()">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="recomment_warning_whole recomment_warning_whole1">
+        <div class="recomment_warning_bg"></div>
+        <div class="recomment_warning_box">
+            <p>삭제하기</p>
+            <p class="warning_info_txt">정말 삭제하시겠습니까?</p>
+            <div class="recomment_warning_flex display_flex flex_nowrap flex_center flex_align_c">
+                <button type="button" onclick="recommentWarningHide()">취소</button>
+                <button type="button" id="warning_send_btn" onclick="deleteOk(this)">삭제</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+    <script src="./js/common_js.js"></script>
+</body>
+</html>

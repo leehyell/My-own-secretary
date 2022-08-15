@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="40" viewBox="0 0 72 40">
+  <g id="calendar_libu" transform="translate(-143.97 -580)">
+    <g id="그룹_53" data-name="그룹 53" transform="translate(160.266 580)">
+      <rect id="사각형_123" data-name="사각형 123" width="40" height="40" rx="20" fill="#f5ebf8"/>
+      <g id="그룹_52" data-name="그룹 52" transform="translate(10 10)">
+        <rect id="사각형_124" data-name="사각형 124" width="20" height="2" transform="translate(0 9)" fill="#5d1663"/>
+        <rect id="사각형_125" data-name="사각형 125" width="20" height="2" transform="translate(11) rotate(90)" fill="#5d1663"/>
+      </g>
+    </g>
+    <path id="패스_20" data-name="패스 20" d="M199.685,1760.008s1.4,13.934,15.762,13.934H187.97Z" transform="translate(0.522 -1161.533)" fill="#f5ebf8"/>
+    <path id="패스_21" data-name="패스 21" d="M204.35,1759.89s-2.02,14.052-16.381,14.052h27.478Z" transform="translate(-44 -1161.533)" fill="#f5ebf8"/>
+  </g>
+</svg>

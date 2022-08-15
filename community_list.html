@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="leehyell" property="og:title"/>
+    <meta content="웹 디자이너 & 웹 퍼블리셔" property="og:description"/>
+    <meta content="https://lee-hyell-portfolio.netlify.app/img/kakao_img.png" property="og:image"/>
+
+    <title>이혜린 포트폴리오</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/community_list.css">
+</head>
+<body>
+    <header class="header_section display_flex flex_nowrap flex_start flex_align_c">
+        <img src="./img/ham_wh.svg" alt="햄버거 메뉴 아이콘" onclick="sideShow()">
+        <p class="another_font">나만의 비서</p>
+        <div class="side_menu" id="side_menu1">
+            <div class="side_bg"></div>
+            <div class="side_inner">
+                <div class="side_title display_flex flex_nowrap flex_start flex_align_c">
+                    <div class="side_alarm" onclick="sideShow2()">
+                        <img src="./img/alarm_wh.svg" alt="">
+                        <span class="alarm_on"></span>
+                    </div>
+                    <p class="another_font">나만의 비서</p>
+                </div>
+                <div class="side_profile">
+                    <a href="./my_profile.html">
+                        <div class="profile_row display_flex flex_nowrap flex_start flex_align_c">
+                            <div class="profile_img">
+                                <img src="./img/profile_default.svg" alt="">
+                            </div>
+                            <p><span>닉네임</span> 님</p>
+                        </div>
+                        <div class="profile_flex display_flex flex_nowrap flex_start flex_align_c">
+                            <img src="./img/mail_icon.svg" alt="">
+                            <p>helena1005@naver.com</p>
+                        </div>
+                        <div class="profile_flex display_flex flex_nowrap flex_start flex_align_c">
+                            <img src="./img/call_icon.svg" alt="">
+                            <p>010-6449-6852</p>
+                        </div>
+                    </a>
+                </div>
+                <nav class="quick_menu">
+                    <p>빠른 메뉴</p>
+                    <a href="./mypage.html">
+                        <p>마이페이지</p>
+                    </a>
+                    <a href="./calendar_write.html">
+                        <p>스케줄 추가</p>
+                    </a>
+                    <a href="./community_write.html">
+                        <p>커뮤니티 글쓰기</p>
+                    </a>
+                    <a href="./event.html">
+                        <p>이벤트</p>
+                    </a>
+                    <a href="./profile_change.html">
+                        <p>프로필 설정</p>
+                    </a>
+                </nav>
+                <a href="javascript:void(0)" class="logout_txt">
+                    <p>로그아웃</p>
+                </a>
+            </div>
+            <img src="./img/cancel_whole.svg" alt="사이드메뉴 닫기 아이콘" class="cancel_icon" onclick="sideHide()">
+        </div>
+        <div class="side_menu" id="side_menu2">
+            <div class="side_bg"></div>
+            <div class="side_inner">
+                <div class="side_title display_flex flex_nowrap flex_between flex_align_c">
+                    <p class="another_font">알림</p>
+                    <button type="button" class="check_all" onclick="chkAll()">모두 확인</button>
+                </div>
+                <div class="alarm_inner">
+                    <!--alarm_row 반복-->
+                    <div class="alarm_row">
+                        <a href="./community_detail.html">
+                            <div class="display_flex flex_nowrap flex_between flex_align_e">
+                                <p>[ 커뮤니티 ]</p>
+                                <p>0000.00.00</p>
+                            </div>
+                            <p class="alarm_type_txt">작성하신 게시글에 댓글이 달렸습니다.</p>
+                            <p class="alarm_detail_txt">댓글내용댓글내용댓글내용댓글내용댓글내용댓글내용댓글내용댓글내용</p>
+                        </a>
+                    </div>
+                    <div class="alarm_row alarm_read">
+                        <a href="./community_detail.html">
+                            <div class="display_flex flex_nowrap flex_between flex_align_e">
+                                <p>[ 커뮤니티 ]</p>
+                                <p>0000.00.00</p>
+                            </div>
+                            <p class="alarm_type_txt">작성하신 댓글에 대댓글이 달렸습니다.</p>
+                            <p class="alarm_detail_txt">댓글내용댓글내용댓글내용댓글내용댓글내용댓글내용댓글내용댓글내용</p>
+                        </a>
+                    </div>
+                    <div class="alarm_row alarm_read">
+                        <a href="./community_detail.html">
+                            <div class="display_flex flex_nowrap flex_between flex_align_e">
+                                <p>[ 커뮤니티 ]</p>
+                                <p>0000.00.00</p>
+                            </div>
+                            <p class="alarm_type_txt">댓글에 언급되셨습니다.</p>
+                            <p class="alarm_detail_txt">댓글내용댓글내용댓글내용댓글내용댓글내용댓글내용댓글내용댓글내용</p>
+                        </a>
+                    </div>
+                    <div class="alarm_row alarm_read">
+                        <a href="./community_detail.html">
+                            <div class="display_flex flex_nowrap flex_between flex_align_e">
+                                <p>[ 커뮤니티 ]</p>
+                                <p>0000.00.00</p>
+                            </div>
+                            <p class="alarm_type_txt">작성하신 댓글에 좋아요가 눌렸습니다.</p>
+                            <p class="alarm_detail_txt">댓글내용댓글내용댓글내용댓글내용댓글내용댓글내용댓글내용댓글내용</p>
+                        </a>
+                    </div>
+                    <div class="alarm_row alarm_read">
+                        <a href="./community_detail.html">
+                            <div class="display_flex flex_nowrap flex_between flex_align_e">
+                                <p>[ 커뮤니티 ]</p>
+                                <p>0000.00.00</p>
+                            </div>
+                            <p class="alarm_type_txt">작성하신 게시글에 좋아요가 눌렸습니다.</p>
+                            <p class="alarm_detail_txt">작성게시글제목작성게시글제목작성게시글...</p>
+                        </a>
+                    </div>
+                    <div class="alarm_row alarm_read">
+                        <a href="./community_detail.html">
+                            <div class="display_flex flex_nowrap flex_between flex_align_e">
+                                <p>[ 커뮤니티 ]</p>
+                                <p>0000.00.00</p>
+                            </div>
+                            <p class="alarm_type_txt">작성하신 게시글이 BEST가 됐습니다.</p>
+                            <p class="alarm_detail_txt">작성게시글제목작성게시글제목작성게시글...</p>
+                        </a>
+                    </div>
+                    <div class="alarm_row alarm_read">
+                        <a href="./calendar_detail.html">
+                            <div class="display_flex flex_nowrap flex_between flex_align_e">
+                                <p>[ 스케줄 ]</p>
+                                <p>0000.00.00</p>
+                            </div>
+                            <p class="alarm_type_txt">스케줄이 시작되기 전 알림입니다.</p>
+                            <p class="alarm_detail_txt">스케줄제목스케줄제목스케줄제목스케줄제목스케줄제목스케줄제목스케줄제목</p>
+                        </a>
+                    </div>
+                    <div class="alarm_row alarm_read">
+                        <a href="./calendar_detail.html">
+                            <div class="display_flex flex_nowrap flex_between flex_align_e">
+                                <p>[ 스케줄 ]</p>
+                                <p>0000.00.00</p>
+                            </div>
+                            <p class="alarm_type_txt">'카테고리' 스케줄에 초대되었습니다.</p>
+                            <p class="alarm_detail_txt">@초대한유저의닉네임</p>
+                        </a>
+                    </div>
+                    <div class="alarm_row alarm_read">
+                        <a href="./calendar_detail.html">
+                            <div class="display_flex flex_nowrap flex_between flex_align_e">
+                                <p>[ 스케줄 ]</p>
+                                <p>0000.00.00</p>
+                            </div>
+                            <p class="alarm_type_txt">초대하신 스케줄을 수락/거절하셨습니다.</p>
+                            <p class="alarm_detail_txt">@수락한유저의닉네임</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <img src="./img/cancel_whole.svg" alt="사이드메뉴 닫기 아이콘" class="cancel_icon" onclick="sideHide2()">
+        </div>
+    </header>
+    <main class="main_section">
+        <div class="summary_title">
+            <div class="community_row display_flex flex_nowrap flex_start flex_align_c">
+                <p class="community_title">BEST!</p>
+                <a href="" class="commu_content"><p>커뮤니티제목커뮤니티제목커뮤니티제목커뮤니티제목커뮤니티제목</p></a>
+            </div>
+            <a href="./community_write.html">
+                <img src="./img/plus_pu.svg" alt="">
+            </a>
+        </div>
+        <nav class="category_nav display_flex flex_nowrap flex_start flex_align_c">
+            <a href="./community_list.html?commu_type=whole" class="nav_on"><p>전체</p></a>
+            <a href="./community_list.html?commu_type=family"><p>가족</p></a>
+            <a href="./community_list.html?commu_type=study"><p>공부</p></a>
+            <a href="./community_list.html?commu_type=cele"><p>기념일</p></a>
+            <a href="./community_list.html?commu_type=date"><p>데이트</p></a>
+            <a href="./community_list.html?commu_type=hospital"><p>병원</p></a>
+            <a href="./community_list.html?commu_type=promise"><p>약속</p></a>
+            <a href="./community_list.html?commu_type=health"><p>운동</p></a>
+            <a href="./community_list.html?commu_type=event"><p>이벤트</p></a>
+            <a href="./community_list.html?commu_type=gift"><p>선물</p></a>
+            <a href="./community_list.html?commu_type=some"><p>썸</p></a>
+            <a href="./community_list.html?commu_type=stock"><p>주식</p></a>
+            <a href="./community_list.html?commu_type=money"><p>적금</p></a>
+            <a href="./community_list.html?commu_type=work"><p>직장</p></a>
+            <a href="./community_list.html?commu_type=free"><p>자유</p></a>
+            <a href="./community_list.html?commu_type=hobby"><p>취미</p></a>
+            <a href="./community_list.html?commu_type=school"><p>학교</p></a>
+            <a href="./community_list.html?commu_type=academy"><p>학원</p></a>
+            <a href="./community_list.html?commu_type=etc"><p>기타</p></a>
+        </nav>
+        <div class="community_list_whole">
+            <!--community_list 반복-->
+            <div class="community_list display_flex flex_nowrap flex_between flex_align_c">
+                <div class="commu_inner">
+                    <a href="./community_detail.html">
+                        <div class="commun_title_flex display_flex flex_nowrap flex_start flex_align_c">
+                            <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                <p>[카테고리]</p>
+                                <p>제목제목제목제목제목제목제목제목제목제목제목제목</p>
+                            </div>
+                            <!--
+                                사진 있을 경우: pic_on
+                                사진 없을 경우: pic_off
+                            -->
+                            <img src="./img/pic_on.svg" alt="">
+                        </div>
+                        <div class="commu_info_flex display_flex flex_nowrap flex_between flex_align_c">
+                            <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                <p>닉네임</p>
+                                <p class="commu_between_p">·</p>
+                                <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                    <img src="./img/commu_gr.svg" alt="">
+                                    <p>0</p>
+                                </div>
+                                <p class="commu_between_p">·</p>
+                                <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                    <img src="./img/heart_gr.png" alt="">
+                                    <p>0</p>
+                                </div>
+                                <p class="commu_between_p">·</p>
+                                <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                    <img src="./img/link_gr.svg" alt="">
+                                    <p>0</p>
+                                </div>
+                            </div>
+                            <p>0000.00.00</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer_section">
+        <nav class="display_flex flex_nowrap flex_center flex_align_c">
+            <a href="./calendar_list.html">
+                <img src="./img/tab_off1.svg" alt="">
+            </a>
+            <a href="./index.html">
+                <img src="./img/tab_off2.svg" alt="">
+            </a>
+            <a href="javascript:void(0)">
+                <img src="./img/tab_on3.svg" alt="">
+            </a>
+        </nav>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src="./js/common_js.js"></script>
+    <script>
+        new Swiper('.main_banner', {
+            pagination : { // 페이징 설정
+                //el : '.swiper-pagination',//나중에 점 보이게 해달라하면 //지우기
+                clickable : true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
+            },
+            loop : true,
+        	effect : 'fade', // 페이드 효과 사용
+        });
+    </script>
+</body>
+</html>

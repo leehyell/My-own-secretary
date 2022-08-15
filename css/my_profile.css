@@ -1,0 +1,73 @@
+.main_section {
+    width: calc(100% - 32px);
+    height: calc(100vh - 60px);
+    padding-top: 20px;
+}
+.side_profile {
+    padding: 0;
+    margin-bottom: 20px;
+    background-color: transparent;
+}
+
+.profile_row {
+    margin-bottom: 0;
+}
+.profile_img {
+    min-width: 80px;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    margin-right: 24px;
+}
+.profile_row p {
+    margin-top: 7px;
+}
+
+.user_produce_txt {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #3D3D3D;
+    margin-bottom: 24px;
+}
+
+.a_link_whole {
+    width: 100%;
+    height: auto;
+    margin: 24px auto 0 auto;
+}
+.a_link_whole a {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #EEE7EF;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.a_link_whole a * {
+    cursor: pointer;
+}
+.a_link_row {
+    width: 100%;
+    height: auto;
+    padding: 14px 0;
+}
+.a_link_row p {
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: bold;
+    color: #3D3D3D;
+}
+.a_link_row img {
+    min-width: 20px;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+}
+.a_link_whole .a_link_row p:nth-child(2) {
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: bold;
+    color: #9F72AE;
+    text-align: end;
+}

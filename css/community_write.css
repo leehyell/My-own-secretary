@@ -1,0 +1,112 @@
+.main_section {
+    width: calc(100% - 32px);
+    height: calc(100vh - 106px);
+    margin-top: 60px;
+}
+.schedule_write_whole {
+    width: 100%;
+    height: auto;
+}
+.schedule_write_flex {
+    width: 100%;
+    height: auto;
+}
+.schedule_write_flex select {
+    min-width: 62px;
+    width: 62px;
+    max-width: 62px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #F7F4F8;
+    background-color: #5D1663;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+	-webkit-appearance:none; /* 화살표 없애기 for chrome*/
+	-moz-appearance:none; /* 화살표 없애기 for firefox*/
+	appearance:none; /* 화살표 없애기 공통*/
+    padding: 0 8px;
+}
+.schedule_write_flex select option {
+    text-align: center;
+}
+.schedule_write_flex input {
+    width: calc(100% - 24px);
+    height: auto;
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: 400;
+    color: #111111;
+    background-color: #F7F4F8;
+    border-radius: 10px;
+    padding: 11px 12px 12px 12px;
+    margin-left: 10px;
+    cursor: text;
+}
+.schedule_write_flex input::placeholder {
+    color: #C9BDCC;
+}
+.schedule_text_box {
+    width: calc(100% - 24px);
+    height: 336px;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: #F7F4F8;
+    margin: 10px auto 0 auto;
+}
+.schedule_text_box textarea {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    resize: none;
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: 400;
+    color: #3D3D3D;
+    cursor: text;
+}
+.schedule_text_box textarea::-webkit-scrollbar {
+    display: none;
+}
+.schedule_text_box textarea::placeholder {
+    color: #C9BDCC;
+}
+.schedule_text_box img {
+    min-width: 17px;
+    width: 17px;
+    height: 17px;
+    background-size: contain;
+    margin: 0 8px 0 0;
+}
+
+.btn_flex {
+    position: absolute;
+    width: calc(100% - 32px);
+    height: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+button.btn {
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    font-weight: 400;
+    border-radius: 10px;
+    cursor: pointer;
+}
+button.btn.btn_cancel {
+    min-width: 100px;
+    width: 100px;
+    color: #5D1663;
+    border: 1px solid #5D1663;
+    background-color: transparent;
+    margin-right: 10px;
+}
+button.btn.btn_send {
+    width: 100%;
+    color: #F7F4F8;
+    background-color: #5D1663;
+}

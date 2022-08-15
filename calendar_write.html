@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="leehyell" property="og:title"/>
+    <meta content="웹 디자이너 & 웹 퍼블리셔" property="og:description"/>
+    <meta content="https://lee-hyell-portfolio.netlify.app/img/kakao_img.png" property="og:image"/>
+
+    <title>이혜린 포트폴리오</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/calendar_write.css">
+</head>
+<body>
+    <header class="header_section display_flex flex_nowrap flex_start flex_align_c">
+        <img src="./img/back_wh.svg" alt="이전으로 가기 아이콘" onclick="goBack()">
+        <p class="another_font">나만의 비서</p>
+    </header>
+    <main class="main_section">
+        <div class="schedule_write_whole">
+            <div class="schedule_write_flex display_flex flex_nowrap flex_start flex_align_c">
+                <select name="" id="">
+                    <option value="">전체</option>
+                    <option value="">가족</option>
+                    <option value="">공부</option>
+                    <option value="">기념일</option>
+                    <option value="">데이트</option>
+                    <option value="">병원</option>
+                    <option value="">약속</option>
+                    <option value="">운동</option>
+                    <option value="">적금</option>
+                    <option value="">직장</option>
+                    <option value="">학교</option>
+                    <option value="">기타</option>
+                </select>
+                <input type="text" placeholder="제목을 입력해주세요(최대 12글자)" maxlength="12">
+            </div>
+            <div onclick="calendarShow()" class="schedule_input_box schedule_input_pur display_flex flex_nowrap flex_start flex_align_c">
+                <img src="./img/calendar_pu.svg" alt="">
+                <input type="text" id="calendar_choose" readonly>
+            </div>
+            <div onclick="alarmShow()" class="schedule_input_box schedule_input_pur display_flex flex_nowrap flex_start flex_align_c">
+                <img src="./img/alarm_pu.svg" alt="">
+                <input type="text" id="alarm_choose" value="알림 없음" placeholder="알림 없음" readonly>
+            </div>
+            <div class="schedule_input_box display_flex flex_nowrap flex_start flex_align_c">
+                <img src="./img/loca_pu.svg" alt="">
+                <input type="text" id="place_write" placeholder="장소를 입력해주세요.">
+            </div>
+            <div class="schedule_text_box display_flex flex_nowrap flex_start flex_align_e">
+                <img src="./img/memo_pu.svg" alt="">
+                <textarea name="" id="memo_write" cols="30" rows="10" placeholder="메모를 입력해주세요."></textarea>
+            </div>
+            <div class="schedule_input_box display_flex flex_nowrap flex_start flex_align_c">
+                <img src="./img/invite_pu.svg" alt="">
+                <input type="text" id="invite_write" placeholder="일정에 초대할 닉네임을 입력해주세요.">
+            </div>
+        </div>
+        <p class="invite_member">
+            일정 초대는 어플 회원끼리만 가능합니다. 초대하기 전 모든 일정은 당사자만 볼 수 있습니다.
+        </p>
+        <div class="btn_flex display_flex flex_nowrap flex_start flex_align_c">
+            <button type="button" class="btn btn_cancel" onclick="goBack()">취소</button>
+            <button type="button" class="btn btn_send">작성</button>
+        </div>
+    </main>
+    <div class="alarm_setting_whole">
+        <div class="alarm_setting_bg"></div>
+        <div class="alarm_setting_box">
+            <div class="alarm_setting_inner">
+                <img src="./img/alarm_ligbu.svg" alt="">
+                <p>알람 설정</p>
+                <div class="alarm_label_whole">
+                    <label for="alarm_time1" class="display_flex flex_nowrap flex_start flex_align_c">
+                        <input type="radio" id="alarm_time1" data-id="alarm_time1" value="일정이 시작되는 시간" name="alarm_time" hidden>
+                        <span></span>
+                        <p>일정이 시작되는 시간</p>
+                    </label>
+                    <label for="alarm_time2" class="display_flex flex_nowrap flex_start flex_align_c">
+                        <input type="radio" id="alarm_time2" data-id="alarm_time2" value="10분 전" name="alarm_time" hidden>
+                        <span></span>
+                        <p>10분 전</p>
+                    </label>
+                    <label for="alarm_time3" class="display_flex flex_nowrap flex_start flex_align_c">
+                        <input type="radio" id="alarm_time3" data-id="alarm_time3" value="1시간 전" name="alarm_time" hidden>
+                        <span></span>
+                        <p>1시간 전</p>
+                    </label>
+                    <label for="alarm_time4" class="display_flex flex_nowrap flex_start flex_align_c">
+                        <input type="radio" id="alarm_time4" data-id="alarm_time4" value="1일 전" name="alarm_time" hidden>
+                        <span></span>
+                        <p>1일 전</p>
+                    </label>
+                    <label for="alarm_time5" class="display_flex flex_nowrap flex_start flex_align_c">
+                        <input type="radio" id="alarm_time5" data-id="alarm_time5" checked value="알림 없음" name="alarm_time" hidden>
+                        <span></span>
+                        <p>알림 없음</p>
+                    </label>
+                </div>
+            </div>
+            <div class="alarm_btn_flex display_flex flex_nowrap flex_center flex_align_c">
+                <button type="button" class="alarm_btn alarm_btn_cancel" onclick="alarmHide()">취소</button>
+                <button type="button" class="alarm_btn alarm_btn_choose" onclick="alarmOk()">선택</button>
+            </div>
+        </div>
+    </div>
+    <div class="calendar_setting_whole">
+        <div class="calendar_setting_bg"></div>
+        <div class="calendar_setting_box">
+            <div class="calendar_setting_txt">
+                <div class="calendar_inner_txt">
+                    <p>START</p>
+                    <p id="calendar_txt_start"><span id="calendar_txt_start_date">0000.00.00</span> <span id="start_hour">00</span>:<span id="start_min">00</span></p>
+                    <p>END</p>
+                    <p id="calendar_txt_end"><span id="calendar_txt_end_date">0000.00.00</span></span> <span id="end_hour">00</span>:<span id="end_min">00</span></p>
+                </div>
+            </div>
+            <div class="calendar_setting_inner">
+                <div class="calendar_start_end_btn display_flex flex_nowrap flex_center flex_align_c">
+                    <button type="button" onclick="calTypeChange(this)" id="btn_start" data-id="btn_start" class="start_end_btn btn_start btn_on">Start</button>
+                    <button type="button" onclick="calTypeChange(this)" id="btn_end" data-id="btn_end" class="start_end_btn btn_end">End</button>
+                </div>
+                <div class="calendar_swiper_whole">
+                    <p id="selected_date_txt" class="selected_date_txt">0000년 0월 00일</p>
+                    <div id="date_select_box" class="date_select_box">
+                        <div class="display_flex flex_nowrap flex_center flex_align_c">
+                            <div>
+                                <p></p>
+                                <p></p>
+                            </div>
+                            <div>
+                                <p></p>
+                                <p></p>
+                            </div>
+                            <div>
+                                <p></p>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="display_flex flex_nowrap flex_center flex_align_c">
+                            <div class="swiper-container date_swiper date_swiper1" id="date_year">
+                                <div class="swiper-wrapper">
+                                    <!-- swiper-slide 반복 -->
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt year2020">2020</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt year2021">2021</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt year2022">2022</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-container date_swiper date_swiper2" id="date_month">
+                                <div class="swiper-wrapper">
+                                    <!-- swiper-slide 반복 -->
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt month1">1</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt month2">2</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt month3">3</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt month4">4</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt month5">5</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt month6">6</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt month7">7</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt month8">8</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt month9">9</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt month10">10</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt month11">11</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt month12">12</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-container date_swiper date_swiper3" id="date_day">
+                                <div class="swiper-wrapper">
+                                    <!-- swiper-slide 반복 -->
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date1">1</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date2">2</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date3">3</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date4">4</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date5">5</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date6">6</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date7">7</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date8">8</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date9">9</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date10">10</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date11">11</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date12">12</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date13">13</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date14">14</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date15">15</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date16">16</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date17">17</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date18">18</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date19">19</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date20">20</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date21">21</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date22">22</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date23">23</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date24">24</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date25">25</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date26">26</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date27">27</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date28">28</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date29">29</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date30">30</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p class="date_inner_txt date31">31</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="calendar_time_flex display_flex flex_nowrap flex_center flex_align_c">
+                    <input type="number" data-id="calendar_hour" id="calendar_hour" onkeyup="timeWrite(this)">
+                    <p>:</p>
+                    <input type="number" data-id="calendar_minute" id="calendar_minute" onkeyup="timeWrite(this)">
+                </div>
+            </div>
+            <div class="calendar_btn_flex display_flex flex_nowrap flex_center flex_align_c">
+                <button type="button" class="calendar_btn calendar_btn_cancel" onclick="calendarHide()">취소</button>
+                <button type="button" class="calendar_btn calendar_btn_choose" onclick="calendarOk()">선택</button>
+            </div>
+        </div>
+    </div>
+    <input type="text" id="date_slide_num1" value="0" hidden>
+    <input type="text" id="date_slide_num2" value="0" hidden>
+    <input type="text" id="date_slide_num3" value="0" hidden>
+    <input type="text" id="now_type" value="btn_start" hidden>
+    <input type="text" id="start_input" value="" hidden>
+    <input type="text" id="end_input" value="" hidden>
+    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+    <script src="./js/common_js.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script> 
+        function calendarLoad(){
+            $('body').css('overflow', 'hidden');
+            $('.date_whole').show();
+            
+            $(function(){
+                var today = new Date();
+                nowYear = today.getFullYear();
+                nowMonth = today.getMonth() + 1;
+                nowDay = today.getDate();
+                hours = today.getHours();
+                minutes = today.getMinutes();
+
+                for(y = 0; y <= nowYear; y++){
+                    $('.year'+y).each(function(){
+                        var txt_year = $('.year'+y).text();
+                        if(txt_year == nowYear){
+                            $(this).addClass('year_on');
+                            $('.year_on').parents('.swiper-slide').addClass('swiper-slide-active');
+                            var year_index = $('.year_on').parents('.swiper-slide-active').index();
+                            date_swiper1.slideTo(year_index, 0, false);
+                        }
+                    });
+                }
+                for(m = 0; m <= 12; m++){
+                    $('.month'+m).each(function(){
+                        var txt_month = $('.month'+m).text();
+                        if(txt_month == nowMonth){
+                            $(this).addClass('month_on');
+                            $('.month_on').parents('.swiper-slide').addClass('swiper-slide-active');
+                            var month_index = $('.month_on').parents('.swiper-slide-active').index();
+                            date_swiper2.slideTo(month_index, 0, false);
+                        }
+                    });
+                }
+
+                for(d = 0; d <= 31; d++){
+                    $('.date'+d).each(function(){
+                        var txt_date = $('.date'+d).text();
+                        if(txt_date == nowDay){
+                            $(this).addClass('day_on');
+                            $('.day_on').parents('.swiper-slide').addClass('swiper-slide-active');
+                            var day_index = $('.day_on').parents('.swiper-slide-active').index();
+                            date_swiper3.slideTo(day_index, 0, false);
+                        }
+                    });
+                }
+
+                $('#calendar_txt_start_date').text(nowYear+'.'+('0'+nowMonth).slice(-2)+'.'+('0'+nowDay).slice(-2));
+                $('#calendar_txt_end_date').text(nowYear+'.'+('0'+nowMonth).slice(-2)+'.'+('0'+nowDay).slice(-2));
+                $('#start_hour').text(('0'+hours).slice(-2));
+                $('#start_min').text(('0'+minutes).slice(-2));
+                $('#end_hour').text(('0'+hours).slice(-2));
+                $('#end_min').text(('0'+minutes).slice(-2));
+                $('#calendar_hour').attr('value', ('0'+hours).slice(-2));
+                $('#calendar_minute').attr('value', ('0'+minutes).slice(-2));
+            });
+            var date_swiper1 = new Swiper('.date_swiper1',{
+                direction: "vertical",
+                paginationClickable: true,
+                spaceBetween: 0,
+                mousewheelControl: false,
+                grabCursor: true,
+                centeredSlides: !0,
+                slidesPerView: "auto",
+                on: {
+                    activeIndexChange: function () {
+                        var date_slide_num = $('#date_slide_num1').val();
+                        var date_year = $('#date_year .swiper-slide-active p').text();
+                        var date_month = $('#date_month .swiper-slide-active p').text();
+                        var date_day = $('#date_day .swiper-slide-active p').text();
+                        $('#date_slide_num1').attr('value', this.realIndex);
+
+                        var now_type = $('#now_type').val();
+                        var now_hour = $('#calendar_hour').val();
+                        var now_min = $('#calendar_minute').val();
+                        if(this.realIndex > date_slide_num){
+                            date_year++;
+                            if(now_type == 'btn_start') {
+                                $('#calendar_txt_start_date').text(date_year+'.'+('0'+date_month).slice(-2)+'.'+('0'+date_day).slice(-2));
+                                $('#start_input').text(date_year+''+('0'+date_month).slice(-2)+''+('0'+date_day).slice(-2));
+                                $('#start_hour').text(('0'+hours).slice(-2));
+                                $('#start_min').text(('0'+minutes).slice(-2));
+                            }else {
+                                $('#calendar_txt_end_date').text(date_year+'.'+('0'+date_month).slice(-2)+'.'+('0'+date_day).slice(-2));
+                                $('#end_input').text(date_year+''+('0'+date_month).slice(-2)+''+('0'+date_day).slice(-2));
+                                $('#start_hour').text(('0'+hours).slice(-2));
+                                $('#start_min').text(('0'+minutes).slice(-2));
+                            }
+                        }else{
+                            date_year--;
+                            if(now_type == 'btn_start') {
+                                $('#calendar_txt_start_date').text(date_year+'.'+('0'+date_month).slice(-2)+'.'+('0'+date_day).slice(-2));
+                                $('#start_input').text(date_year+''+('0'+date_month).slice(-2)+''+('0'+date_day).slice(-2));
+                                $('#start_hour').text(('0'+hours).slice(-2));
+                                $('#start_min').text(('0'+minutes).slice(-2));
+                            }else {
+                                $('#calendar_txt_end_date').text(date_year+'.'+('0'+date_month).slice(-2)+'.'+('0'+date_day).slice(-2));
+                                $('#end_input').text(date_year+''+('0'+date_month).slice(-2)+''+('0'+date_day).slice(-2));
+                                $('#start_hour').text(('0'+hours).slice(-2));
+                                $('#start_min').text(('0'+minutes).slice(-2));
+                            }
+                        }
+
+                        var start_input = $('#start_input').val();
+                        var end_input = $('#end_input').val();
+                        if(start_input > end_input) {
+                            $('.calendar_btn_choose').prop('disabled', true);
+                        }else {
+                            $('.calendar_btn_choose').prop('disabled', false);
+                        }
+                    }
+                }
+            });//서버작업 X
+            var date_swiper2 = new Swiper('.date_swiper2',{
+                direction: "vertical",
+                paginationClickable: true,
+                spaceBetween: 0,
+                mousewheelControl: false,
+                grabCursor: true,
+                centeredSlides: !0,
+                slidesPerView: "auto",
+                on: {
+                    activeIndexChange: function () {
+                        var date_slide_num = $('#date_slide_num2').val();
+                        var date_year = $('#date_year .swiper-slide-active p').text();
+                        var date_month = $('#date_month .swiper-slide-active p').text();
+                        var date_day = $('#date_day .swiper-slide-active p').text();
+                        $('#date_slide_num2').attr('value', this.realIndex);
+        
+                        var now_type = $('#now_type').val();
+                        var now_hour = $('#calendar_hour').val();
+                        var now_min = $('#calendar_minute').val();
+                        
+                        if(this.realIndex > date_slide_num){
+                            date_month++;
+                            if(now_type == 'btn_start') {
+                                $('#calendar_txt_start_date').text(date_year+'.'+('0'+date_month).slice(-2)+'.'+('0'+date_day).slice(-2));
+                                $('#start_input').text(date_year+''+('0'+date_month).slice(-2)+''+('0'+date_day).slice(-2));
+                                $('#start_hour').text(('0'+hours).slice(-2));
+                                $('#start_min').text(('0'+minutes).slice(-2));
+                            }else {
+                                $('#calendar_txt_end_date').text(date_year+'.'+('0'+date_month).slice(-2)+'.'+('0'+date_day).slice(-2));
+                                $('#end_input').text(date_year+''+('0'+date_month).slice(-2)+''+('0'+date_day).slice(-2));
+                                $('#start_hour').text(('0'+hours).slice(-2));
+                                $('#start_min').text(('0'+minutes).slice(-2));
+                            }
+                        }else{
+                            date_month--;
+                            if(now_type == 'btn_start') {
+                                $('#calendar_txt_start_date').text(date_year+'.'+('0'+date_month).slice(-2)+'.'+('0'+date_day).slice(-2));
+                                $('#start_input').text(date_year+''+('0'+date_month).slice(-2)+''+('0'+date_day).slice(-2));
+                                $('#start_hour').text(('0'+hours).slice(-2));
+                                $('#start_min').text(('0'+minutes).slice(-2));
+                            }else {
+                                $('#calendar_txt_end_date').text(date_year+'.'+('0'+date_month).slice(-2)+'.'+('0'+date_day).slice(-2));
+                                $('#end_input').text(date_year+''+('0'+date_month).slice(-2)+''+('0'+date_day).slice(-2));
+                                $('#start_hour').text(('0'+hours).slice(-2));
+                                $('#start_min').text(('0'+minutes).slice(-2));
+                            }
+                        }
+
+                        var start_input = $('#start_input').val();
+                        var end_input = $('#end_input').val();
+                        if(start_input > end_input) {
+                            $('.calendar_btn_choose').prop('disabled', true);
+                        }else {
+                            $('.calendar_btn_choose').prop('disabled', false);
+                        }
+                    }
+                }
+            });//서버작업 X
+            var date_swiper3 = new Swiper('.date_swiper3',{
+                direction: "vertical",
+                paginationClickable: true,
+                spaceBetween: 0,
+                mousewheelControl: false,
+                grabCursor: true,
+                centeredSlides: !0,
+                slidesPerView: "auto",
+                on: {
+                    activeIndexChange: function () {
+                        var date_slide_num = $('#date_slide_num3').val();
+                        var date_year = $('#date_year .swiper-slide-active p').text();
+                        var date_month = $('#date_month .swiper-slide-active p').text();
+                        var date_day = $('#date_day .swiper-slide-active p').text();
+                        $('#date_slide_num3').attr('value', this.realIndex);
+        
+                        var now_type = $('#now_type').val();
+                        var now_hour = $('#calendar_hour').val();
+                        var now_min = $('#calendar_minute').val();
+                        if(this.realIndex > date_slide_num){
+                            date_day++;
+                            if(now_type == 'btn_start') {
+                                $('#calendar_txt_start_date').text(date_year+'.'+('0'+date_month).slice(-2)+'.'+('0'+date_day).slice(-2));
+                                $('#start_input').text(date_year+''+('0'+date_month).slice(-2)+''+('0'+date_day).slice(-2));
+                                $('#start_hour').text(('0'+hours).slice(-2));
+                                $('#start_min').text(('0'+minutes).slice(-2));
+                            }else {
+                                $('#calendar_txt_end_date').text(date_year+'.'+('0'+date_month).slice(-2)+'.'+('0'+date_day).slice(-2));
+                                $('#end_input').text(date_year+''+('0'+date_month).slice(-2)+''+('0'+date_day).slice(-2));
+                                $('#start_hour').text(('0'+hours).slice(-2));
+                                $('#start_min').text(('0'+minutes).slice(-2));
+                            }
+                        }else{
+                            date_day--;
+                            if(now_type == 'btn_start') {
+                                $('#calendar_txt_start_date').text(date_year+'.'+('0'+date_month).slice(-2)+'.'+('0'+date_day).slice(-2));
+                                $('#end_input').text(date_year+''+('0'+date_month).slice(-2)+''+('0'+date_day).slice(-2));
+                                $('#start_hour').text(('0'+hours).slice(-2));
+                                $('#start_min').text(('0'+minutes).slice(-2));
+                            }else {
+                                $('#calendar_txt_end_date').text(date_year+'.'+('0'+date_month).slice(-2)+'.'+('0'+date_day).slice(-2));
+                                $('#end_input').text(date_year+''+('0'+date_month).slice(-2)+''+('0'+date_day).slice(-2));
+                                $('#start_hour').text(('0'+hours).slice(-2));
+                                $('#start_min').text(('0'+minutes).slice(-2));
+                            }
+                        }
+
+                        var start_input = $('#start_input').val();
+                        var end_input = $('#end_input').val();
+                        if(start_input > end_input) {
+                            $('.calendar_btn_choose').prop('disabled', true);
+                        }else {
+                            $('.calendar_btn_choose').prop('disabled', false);
+                        }
+                    }
+                }
+            });//서버작업 X
+        }
+            function calendarOk() {
+                var date_select_date1 = $('#calendar_txt_start_date').text();
+                var date_select_date2 = $('#calendar_txt_end_date').text();
+                var date_start_hour = $('#start_hour').text();
+                var date_start_min = $('#start_min').text();
+                var date_end_hour = $('#end_hour').text();
+                var date_end_min = $('#end_min').text();
+                $('#calendar_choose').attr('value', date_select_date1 + ' ' + date_start_hour + ':' + date_start_min + ' ~ ' + date_select_date2 + ' ' + date_end_hour + ':' + date_end_min);
+                calendarHide();
+            };
+        function timeWrite(ths) {
+            var ths_type = ths.dataset.id;
+            var ths_val = $('#'+ths_type).val();
+            var now_type = $('#now_type').val();
+            if(now_type == 'btn_start') {
+                if(ths_type == 'calendar_hour') {
+                    $('#start_hour').text(ths_val);
+                }else {
+                    $('#start_min').text(ths_val);
+                }
+            }else {
+                if(ths_type == 'calendar_hour') {
+                    $('#end_hour').text(ths_val);
+                }else {
+                    $('#end_min').text(ths_val);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

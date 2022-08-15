@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="leehyell" property="og:title"/>
+    <meta content="웹 디자이너 & 웹 퍼블리셔" property="og:description"/>
+    <meta content="https://lee-hyell-portfolio.netlify.app/img/kakao_img.png" property="og:image"/>
+
+    <title>이혜린 포트폴리오</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/my_profile.css">
+</head>
+<body>
+    <header class="header_section display_flex flex_nowrap flex_start flex_align_c">
+        <img src="./img/back_wh.svg" alt="이전으로 가기 아이콘" onclick="goBack()">
+        <p class="another_font">닉네임</p>
+    </header>
+    <main class="main_section">
+        <div class="side_profile">
+            <a href="./my_profile.html">
+                <div class="profile_row display_flex flex_nowrap flex_start flex_align_s">
+                    <div class="profile_img">
+                        <img src="./img/profile_default.svg" alt="">
+                    </div>
+                    <p><span>닉네임</span> 님</p>
+                </div>
+            </a>
+        </div>
+        <p class="user_produce_txt">나를표현하는100글자</p>
+        <div class="a_link_whole">
+            <a href="./my_community.html">
+                <div class="a_link_row display_flex flex_nowrap flex_between flex_align_c">
+                    <p>닉네임 님의 게시글</p>
+                    <p>0</p>
+                </div>
+            </a>
+            <a href="./my_comment.html">
+                <div class="a_link_row display_flex flex_nowrap flex_between flex_align_c">
+                    <p>닉네임 님의 댓글</p>
+                    <p>0</p>
+                </div>
+            </a>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+    <script src="./js/common_js.js"></script>
+</body>
+</html>

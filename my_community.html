@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="leehyell" property="og:title"/>
+    <meta content="웹 디자이너 & 웹 퍼블리셔" property="og:description"/>
+    <meta content="https://lee-hyell-portfolio.netlify.app/img/kakao_img.png" property="og:image"/>
+
+    <title>이혜린 포트폴리오</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/my_community.css">
+</head>
+<body>
+    <header class="header_section display_flex flex_nowrap flex_start flex_align_c">
+        <img src="./img/back_wh.svg" alt="이전으로 가기 아이콘" onclick="goBack()">
+        <p class="another_font">나만의 비서</p>
+    </header>
+    <main class="main_section">
+        <nav class="category_nav display_flex flex_nowrap flex_start flex_align_c">
+            <a href="javascript:location.replace('./my_community.html?commu_type=whole')" class="nav_on"><p>전체</p></a>
+            <a href="javascript:location.replace('./my_community.html?commu_type=family')"><p>가족</p></a>
+            <a href="javascript:location.replace('./my_community.html?commu_type=study')"><p>공부</p></a>
+            <a href="javascript:location.replace('./my_community.html?commu_type=cele')"><p>기념일</p></a>
+            <a href="javascript:location.replace('./my_community.html?commu_type=date')"><p>데이트</p></a>
+            <a href="javascript:location.replace('./my_community.html?commu_type=hospital')"><p>병원</p></a>
+            <a href="javascript:location.replace('./my_community.html?commu_type=promise')"><p>약속</p></a>
+            <a href="javascript:location.replace('./my_community.html?commu_type=health')"><p>운동</p></a>
+            <a href="javascript:location.replace('./my_community.html?commu_type=event')"><p>이벤트</p></a>
+            <a href="javascript:location.replace('./my_community.html?commu_type=gift')"><p>선물</p></a>
+            <a href="javascript:location.replace('./my_community.html?commu_type=some')"><p>썸</p></a>
+            <a href="javascript:location.replace('./my_community.html?commu_type=stock')"><p>주식</p></a>
+            <a href="javascript:location.replace('./my_community.html?commu_type=money')"><p>적금</p></a>
+            <a href="javascript:location.replace('./my_community.html?commu_type=work')"><p>직장</p></a>
+            <a href="javascript:location.replace('./my_community.html?commu_type=free')"><p>자유</p></a>
+            <a href="javascript:location.replace('./my_community.html?commu_type=hobby')"><p>취미</p></a>
+            <a href="javascript:location.replace('./my_community.html?commu_type=school')"><p>학교</p></a>
+            <a href="javascript:location.replace('./my_community.html?commu_type=academy')"><p>학원</p></a>
+            <a href="javascript:location.replace('./my_community.html?commu_type=etc')"><p>기타</p></a>
+        </nav>
+        <div class="community_list_whole">
+            <!--community_list 반복-->
+            <div class="community_list display_flex flex_nowrap flex_between flex_align_c">
+                <div class="commu_inner">
+                    <a href="./community_detail.html">
+                        <div class="commun_title_flex display_flex flex_nowrap flex_start flex_align_c">
+                            <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                <p>[카테고리]</p>
+                                <p>제목제목제목제목제목제목제목제목제목제목제목제목</p>
+                            </div>
+                            <!--
+                                사진 있을 경우: pic_on
+                                사진 없을 경우: pic_off
+                            -->
+                            <img src="./img/pic_on.svg" alt="">
+                        </div>
+                        <div class="commu_info_flex display_flex flex_nowrap flex_between flex_align_c">
+                            <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                <p>닉네임</p>
+                                <p class="commu_between_p">·</p>
+                                <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                    <img src="./img/commu_gr.svg" alt="">
+                                    <p>0</p>
+                                </div>
+                                <p class="commu_between_p">·</p>
+                                <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                    <img src="./img/heart_gr.png" alt="">
+                                    <p>0</p>
+                                </div>
+                                <p class="commu_between_p">·</p>
+                                <div class="display_flex flex_nowrap flex_start flex_align_c">
+                                    <img src="./img/link_gr.svg" alt="">
+                                    <p>0</p>
+                                </div>
+                            </div>
+                            <p>0000.00.00</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="commu_btn_flex display_flex flex_nowrap flex_end flex_align_c">
+                    <button type="button" class="commu_btn">수정</button>
+                    <button type="button" class="commu_btn" onclick="deletePop()">삭제</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <input type="text" id="start_val" readonly hidden>
+    <input type="text" id="end_val" readonly hidden>
+    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+    <script src="./js/common_js.js"></script>
+    <script>
+        $('.commu_inner').on("touchstart", function (e) {
+            var p_x = e.originalEvent.touches[0].pageX;
+            $('#start_val').attr('value', p_x);
+        });
+
+        $('.commu_inner').on("touchmove", function (e) {
+            var win_w = $(window).innerWidth();
+            var start_val = $('#start_val').val();
+            var p_x = e.originalEvent.touches[0].pageX;
+            var new_x = win_w - p_x;
+            var new_x2 = p_x - start_val;
+            var new_x3 = start_val - p_x;
+            console.log(start_val);
+
+            if(start_val < p_x ) {//우측
+                $(this).css('transform', 'translateX('+ new_x2 +'px)');
+                $(this).next('.commu_btn_flex').css('transform', 'translateX('+ new_x2 +'px)');
+            }else{//좌측
+                if(new_x3 > 20) {
+                    $(this).css('transform', 'translateX(-180px)');
+                    $(this).next('.commu_btn_flex').css('transform', 'translateX(-180px)');
+                }
+            }
+        });
+        $('.commu_inner').on("touchend", function (e) {
+            var start_val = $('#start_val').val();
+            var p_x = e.originalEvent.changedTouches[0].pageX;
+            
+            if(start_val < p_x ) {//우측
+                $(this).css('transform', 'translateX(0)');
+                $(this).next('.commu_btn_flex').css('transform', 'translateX(0)');
+            }
+        });
+    </script>
+</body>
+</html>

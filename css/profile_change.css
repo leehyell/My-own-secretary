@@ -1,0 +1,173 @@
+.main_section {
+    width: calc(100% - 32px);
+    padding-top: 20px;
+}
+
+.profile_box {
+    width: 100%;
+    height: auto;
+}
+.profile_inner {
+    position: relative;
+    width: max-content;
+    height: auto;
+    margin: 0 auto;
+}
+.profile_img {
+    position: relative;
+    min-width: 100px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.profile_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile_change_img {
+    position: absolute;
+    min-width: 30px;
+    width: 30px;
+    height: 30px;
+    background-color: #5D1663;
+    border-radius: 30px;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+}
+.profile_change_img * {
+    cursor: pointer;
+}
+.profile_change_img img {
+    width: 16px;
+    height: 16px;
+    margin: 7px;
+}
+.profile_box p {
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    margin: 16px auto 20px auto;
+}
+.profile_box p span {
+    color: #5D1663;
+}
+
+.schedule_input_whole {
+    width: 100%;
+    height: auto;
+}
+.schedule_input_box {
+    width: calc(100% - 24px);
+    height: auto;
+    border-radius: 10px;
+    padding: 12px 12px 11px 12px;
+    margin: 10px auto 0 auto;
+    background-color: #F7F4F8;
+    color: #3D3D3D!important;
+}
+.schedule_input_whole .schedule_input_box:nth-child(4) {
+    margin-top: 20px;
+}
+.schedule_input_box.schedule_input_pur {
+    background-color: #EAD9EF;
+    cursor: pointer;
+}
+.schedule_input_box.schedule_input_pur * {
+    cursor: pointer;
+}
+.schedule_input_box img {
+    min-width: 17px;
+    width: 17px;
+    height: 17px;
+    background-size: contain;
+    margin: 0 8px 0 0;
+}
+.schedule_input_box input {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: 400;
+    color: #3D3D3D!important;
+    background-color: transparent;
+    cursor: text;
+}
+.schedule_input_box input::placeholder {
+    color: #C9BDCC;
+}
+.schedule_text_box {
+    width: calc(100% - 24px);
+    height: 76px;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: #F7F4F8;
+    margin: 10px auto 0 auto;
+}
+.schedule_text_box textarea {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    resize: none;
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: 400;
+    color: #3D3D3D;
+    cursor: text;
+}
+.schedule_text_box textarea::-webkit-scrollbar {
+    display: none;
+}
+.schedule_text_box textarea::placeholder {
+    color: #C9BDCC;
+}
+.schedule_text_box img {
+    min-width: 17px;
+    width: 17px;
+    height: 17px;
+    background-size: contain;
+    margin: 0 8px 0 0;
+}
+
+p#pw_chk_txt {
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #bb0000;
+    margin-top: 5px;
+    display: none;
+}
+
+.btn_flex {
+    position: absolute;
+    width: calc(100% - 32px);
+    height: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+button.btn {
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    font-weight: 400;
+    border-radius: 10px;
+    cursor: pointer;
+}
+button.btn.btn_cancel {
+    min-width: 100px;
+    width: 100px;
+    color: #5D1663;
+    border: 1px solid #5D1663;
+    background-color: transparent;
+    margin-right: 10px;
+}
+button.btn.btn_send {
+    width: 100%;
+    color: #F7F4F8;
+    background-color: #5D1663;
+}
